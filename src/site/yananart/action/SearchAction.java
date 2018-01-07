@@ -1,6 +1,7 @@
 package site.yananart.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import site.yananart.controller.GetDAO;
 import site.yananart.dao.ToolDAO;
 import site.yananart.dao.UserDAO;
 import site.yananart.entity.Tool;
@@ -21,7 +22,7 @@ public class SearchAction {
             session.put("searchStatus","请输入搜索内容");
             return "error";
         }
-        ToolDAO toolDAO=new ToolDAO();
+        ToolDAO toolDAO=GetDAO.getToolDAO();
         ArrayList<Tool> tools;
         if(searchType.equals("name")){
             tools=toolDAO.getToolByName(content);
@@ -53,7 +54,7 @@ public class SearchAction {
         }else if(searchType.equals("uploadUser")) {
             ArrayList<User> users;
             tools=new ArrayList<>();
-            UserDAO userDAO=new UserDAO();
+            UserDAO userDAO= GetDAO.getUserDAO();
             users=userDAO.getUserByName(content);
             ArrayList<Tool> mid;
             if(users!=null){

@@ -11,7 +11,7 @@
     <title>欢迎</title>
 </head>
 <body>
-欢迎您 ${user.getUserName()} <br>
+欢迎您，${user.getUserName()} <br>
 <a href="/u/upload.jsp">上传工具</a>
 <a href="/u/changeInfo.jsp">修改密码</a>
 <a href="Logout.action">退出用户</a>

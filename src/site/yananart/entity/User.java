@@ -61,4 +61,10 @@ public class User {
     public void setManageUrl(String manageUrl) {
         this.manageUrl = manageUrl;
     }
+
+    public String getAdminType(){
+        if(this.userType==2) return "根管理员";
+        else if(this.userType==0) return "非管理员";
+        else return "\""+this.manageUrl+"\"目录管理员";
+    }
 }

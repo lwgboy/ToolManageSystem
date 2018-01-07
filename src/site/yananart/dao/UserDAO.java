@@ -42,4 +42,18 @@ public class UserDAO {
         String sql="update user_table set user_pwd=\"" +newPwd+ "\" where user_id=\"" + id + "\"";
         return connention.changeData(sql);
     }
+
+    public void setUserToAdmin(String id,String url){
+        String sql="update user_table set user_type=1,manage_url=\"/" + url + "\" where user_id=\"" + id + "\"";
+        connention.changeData(sql);
+    }
+
+    public void removeAdmin(String id){
+        String sql="update user_table set user_type=0,manage_url=default where user_id=\"" + id + "\"";
+        connention.changeData(sql);
+    }
+
+    public void closeConnect(){
+        connention.closeConnention();
+    }
 }

@@ -4,10 +4,13 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
+<!--suppress ALL -->
 <struts>
+    <!--suppress Struts2ModelInspection -->
     <package name="site.yananart.action" namespace="/" extends="struts-default">
         <action name="Login" class="site.yananart.action.LoginAction" method="execute">
             <result name="success">/u/index.jsp</result>
+            <result name="admin">/a/index.jsp</result>
             <result name="error">/Login.jsp</result>
         </action>
         <action name="ChUserInfo" class="site.yananart.action.ChangUserInformationAction" method="execute">
@@ -27,8 +30,28 @@
         <action name="toolDetail" class="site.yananart.action.ShowToolDetailAction" method="execute">
             <result name="success">/u/toolDetail.jsp</result>
         </action>
-        <action name="insertComment" class="site.yananart.action.InsertCommentAction" method="execute">
+        <action name="insertComment" class="site.yananart.action.ChangeCommentDetailAction" method="insertComment">
             <result name="success">/u/toolDetail.jsp</result>
+        </action>
+        <action name="makeStar" class="site.yananart.action.ChangeCommentDetailAction" method="markStart">
+            <result name="success">/u/toolDetail.jsp</result>
+        </action>
+        <action name="resultList" class="site.yananart.action.ChangeCommentDetailAction" method="goBack">
+            <result name="success">/u/result.jsp</result>
+        </action>
+        <action name="ChUserInfoForAdmin" class="site.yananart.action.ChangUserInformationAction" method="execute">
+            <result name="success">/a/index.jsp</result>
+            <result name="error">/a/changeInfo.jsp</result>
+        </action>
+        <action name="ChUserInfoOutForAdmin" class="site.yananart.action.ChangUserInformationAction" method="out">
+            <result name="success">/a/index.jsp</result>
+        </action>
+        <action name="setAdmin" class="site.yananart.action.SetAdminAction" method="find">
+            <result name="success">/a/setAdmin.jsp</result>
+            <result name="error">/a/index.jsp</result>
+        </action>
+        <action name="makeAdmin" class="site.yananart.action.SetAdminAction" method="make">
+            <result name="success">/a/index.jsp</result>
         </action>
     </package>
 </struts>

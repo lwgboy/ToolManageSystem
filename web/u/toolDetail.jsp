@@ -12,19 +12,36 @@
     <title>${tool.getToolName()}</title>
 </head>
 <body>
-<h1>${tool.getToolName()}</h1><br>
+<h1>${tool.getToolName()}</h1>&nbsp;
+<c:if test="${mycomment.isStar()}">
+    <form action="makeStar.action" method="post">
+        <input type="submit" value="已点赞"/>
+    </form>
+</c:if>
+<c:if test="${!mycomment.isStar()}">
+    <form action="makeStar.action" method="post">
+        <input type="submit" value="点赞"/>
+    </form>
+</c:if>
+<br>
 ID:${tool.getToolId()}&nbsp;
 Version:${tool.getToolVersion()}&nbsp;
 Tag:${tool.getToolTag()}<br>
 ${tool.getToolDescribe()}<br>
 点赞：${tool.getStarNumber()}&nbsp;
 评论：${tool.getCommentNumber()}<br>
+贡献者：${userDAO.getUserById(tool.getUploadUserId()).getUserName()}<br>
+上传时间：${tool.getUploadTime()}
+<br>
+<br>
+<a href="resultList.action">返回</a>
+<br>
 <br>
 <b>评论</b><br>
 <c:if test="${comments.size()>0}">
     <c:forEach items="${comments}" var="comment">
         <p>${comment.getCommentContent()}<br></p>
-        <p>${comment.getUserId()}&nbsp;&nbsp;${comment.getCommendTime()}</p>
+        <p>${userDAO.getUserById(comment.getUserId()).getUserName()}&nbsp;&nbsp;${comment.getCommendTime()}</p>
         <br>
     </c:forEach>
 </c:if>
@@ -33,11 +50,14 @@ ${tool.getToolDescribe()}<br>
 </c:if>
 <br>
 <br>
-<br>
-<br>
-${user.getUserName()}的评论：&nbsp;&nbsp;&nbsp;&nbsp;评论时间：${mycomment.getCommendTime()}<br>
+我的评论：&nbsp;&nbsp;&nbsp;&nbsp;评论时间：${mycomment.getCommendTime()}<br>
 <form action="insertComment.action" method="post">
-    <input type="text" name="commentContent" style="width:500px;height:100px;border:0px;" value="${mycomment.getCommentContent()}" /><br>
+    <c:if test="${mycomment.isComment()}">
+        <textarea name="commentContent" style="width: 500px;height: 120px;border:0px">${mycomment.getCommentContent()}</textarea><br>
+    </c:if>
+    <c:if test="${mycomment.isComment()}">
+        <textarea name="commentContent" style="width: 500px;height: 20px;border:0px">尚未评论</textarea><br>
+    </c:if>
     <input type="submit" value="提交" />
 </form>
 </body>

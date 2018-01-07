@@ -1,6 +1,7 @@
 package site.yananart.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import site.yananart.controller.GetDAO;
 import site.yananart.dao.UserDAO;
 import site.yananart.entity.User;
 
@@ -12,7 +13,7 @@ public class ChangUserInformationAction {
     private String NewPwdAgain;
 
     public String execute(){
-        UserDAO userDAO=new UserDAO();
+        UserDAO userDAO= GetDAO.getUserDAO();
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
         User user= (User) session.get("user");

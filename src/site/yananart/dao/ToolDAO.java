@@ -72,4 +72,20 @@ public class ToolDAO {
         ResultSet resultSet=getToolSet("tool_tag",id,"=");
         return turnToTool(resultSet);
     }
+
+    public void changeStars(String id,boolean up){
+        String sql;
+        if(up) sql="update tool_table set star_number=star_number+1 where tool_id=\""+id+"\"";
+        else sql="update tool_table set star_number=star_number-1 where tool_id=\""+id+"\"";
+        connention.changeData(sql);
+    }
+
+    public void changeComments(String id){
+        String sql="update tool_table set comment_number=comment_number+1 where tool_id=\""+id+"\"";
+        connention.changeData(sql);
+    }
+
+    public void closeConnect(){
+        connention.closeConnention();
+    }
 }

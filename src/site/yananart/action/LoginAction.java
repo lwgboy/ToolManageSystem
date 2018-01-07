@@ -1,6 +1,7 @@
 package site.yananart.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import site.yananart.controller.GetDAO;
 import site.yananart.dao.UserDAO;
 import site.yananart.entity.User;
 
@@ -9,15 +10,25 @@ import java.util.Map;
 public class LoginAction{
     private String userId;
     private String password;
+    private String userType;
 
     public String execute() throws Exception {
-        UserDAO userDAO=new UserDAO();
-        User user=userDAO.getUserById(userId);
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
+        UserDAO userDAO= GetDAO.getUserDAO();
+        User user=userDAO.getUserById(userId);
         if(user!=null){
             if(user.getUserPwd().equals(password)){
-                session.put("LoginStatus","登陆成功");
+                if(userType.equals("admin")){
+                    if(user.getUserType()==0){
+                        session.put("LoginStatus","此账户不是管理员账户");
+                        return "error";
+                    }
+                    session.remove("LoginStatus");
+                    session.put("user",user);
+                    return "admin";
+                }
+                session.remove("LoginStatus");
                 session.put("user",user);
                 return "success";
             }
@@ -42,5 +53,13 @@ public class LoginAction{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

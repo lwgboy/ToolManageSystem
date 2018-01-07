@@ -1,5 +1,6 @@
 package site.yananart.dao;
 
+import site.yananart.controller.GetDAO;
 import site.yananart.entity.Comment;
 
 import java.sql.ResultSet;
@@ -56,7 +57,8 @@ public class CommentDAO {
         connention.changeData(sql);
     }
 
-    public boolean insertComment(String toolId,String userId,String comment) {
+    public boolean insertComment(String toolId,String userId,String comment) throws Exception {
+        if(!getCommentById(toolId,userId).isComment()) GetDAO.getToolDAO().changeComments(toolId);
         if(!isHaveComment(toolId,userId)){
             String sql="insert into comment_table values(\""+toolId+"\",\""+userId+"\",default,true,\""+comment+"\",null)";
             return connention.changeData(sql);
@@ -66,13 +68,15 @@ public class CommentDAO {
         }
     }
 
-    public boolean makeStar(String toolId,String userId) {
-        if(!isHaveComment(toolId,userId)){
-            String sql="insert into comment_table values(\""+toolId+"\",\""+userId+"\",true,default,default,null)";
-            return connention.changeData(sql);
-        }else{
-            String sql="update comment_table set is_star=true where tool_id=\""+toolId+"\" and user_id=\""+userId+"\"";
-            return connention.changeData(sql);
-        }
+    public void makeStar(String toolId,String userId,boolean is) {
+        String sql;
+        if(is) sql="update comment_table set is_star=true where tool_id=\""+toolId+"\" and user_id=\""+userId+"\"";
+        else sql="update comment_table set is_star=false where tool_id=\""+toolId+"\" and user_id=\""+userId+"\"";
+        GetDAO.getToolDAO().changeStars(toolId,is);
+        connention.changeData(sql);
+    }
+
+    public void closeConnect(){
+        connention.closeConnention();
     }
 }
