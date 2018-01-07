@@ -7,28 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b74c1e45-ddd1-4a11-87ad-047dea2e0157" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/site/yananart/action/ChangeCommentDetailAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/site/yananart/action/SetAdminAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/site/yananart/controller/GetDAO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/a/changeInfo.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/a/index.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/a/setAdmin.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/ChangUserInformationAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/ChangUserInformationAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/InsertCommentAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/LoginAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/LoginAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/LogoutAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/LogoutAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/SearchAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/SearchAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/ShowToolDetailAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/ShowToolDetailAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/dao/CommentDAO.java" afterPath="$PROJECT_DIR$/src/site/yananart/dao/CommentDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/dao/ToolDAO.java" afterPath="$PROJECT_DIR$/src/site/yananart/dao/ToolDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/site/yananart/dao/UserDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/entity/User.java" afterPath="$PROJECT_DIR$/src/site/yananart/entity/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change beforePath="$PROJECT_DIR$/web/u/changeInfo.jsp" afterPath="$PROJECT_DIR$/web/u/changeInfo.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/index.jsp" afterPath="$PROJECT_DIR$/web/u/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/toolDetail.jsp" afterPath="$PROJECT_DIR$/web/u/toolDetail.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/upload.jsp" afterPath="$PROJECT_DIR$/web/u/upload.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -617,7 +596,7 @@
       <workItem from="1515219971999" duration="17971000" />
       <workItem from="1515238457295" duration="8724000" />
       <workItem from="1515268739264" duration="242000" />
-      <workItem from="1515269798398" duration="32134000" />
+      <workItem from="1515269798398" duration="32178000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1515279203143</created>
@@ -626,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515279203143</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="还有上传、下载、管理未完成">
+      <created>1515359352423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1515359352423</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59071000" />
+    <option name="totallyTimeSpent" value="59115000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,7 +667,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="还有上传、下载、管理未完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="还有上传、下载、管理未完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
