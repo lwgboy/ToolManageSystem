@@ -87,6 +87,11 @@ public class Tool {
         return toolType;
     }
 
+    public String GetToolTypeDes(){
+        String[] des={"系统工具","通讯社交","影音播放","新闻阅读","摄影图像","网上购物","金融理财","办公商务"};
+        return des[getToolType()];
+    }
+
     public void setToolType(int toolType) {
         this.toolType = toolType;
     }

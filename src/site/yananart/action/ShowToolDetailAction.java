@@ -1,6 +1,7 @@
 package site.yananart.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.ServletActionContext;
 import site.yananart.controller.GetDAO;
 import site.yananart.dao.CommentDAO;
 import site.yananart.dao.ToolDAO;
@@ -18,6 +19,7 @@ public class ShowToolDetailAction {
     public String execute() throws Exception {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
+        String realpath = ServletActionContext.getServletContext().getRealPath("/tool");
         User user= (User) session.get("user");
         Comment comment;
         ToolDAO toolDAO= GetDAO.getToolDAO();
@@ -41,6 +43,7 @@ public class ShowToolDetailAction {
             });
         }
         session.put("comments",commentArrayList);
+        session.put("path",tool.getToolUrl());
         return "success";
     }
 

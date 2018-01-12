@@ -5,6 +5,7 @@ import site.yananart.entity.Tool;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ToolDAO {
     private BasicConnent connention;
@@ -52,7 +53,8 @@ public class ToolDAO {
     }
 
     public ArrayList<Tool> getToolByType(int type) throws SQLException {
-        ResultSet resultSet=getToolSet("tool_type",String.valueOf(type),"=");
+        String sql="select * from tool_table where tool_type=" + String.valueOf(type);
+        ResultSet resultSet=connention.getData(sql);
         return turnToTool(resultSet);
     }
 
@@ -69,7 +71,7 @@ public class ToolDAO {
     }
 
     public ArrayList<Tool> getToolByUploadUserId(String id) throws SQLException {
-        ResultSet resultSet=getToolSet("tool_tag",id,"=");
+        ResultSet resultSet=getToolSet("upload_user_id",id,"=");
         return turnToTool(resultSet);
     }
 
@@ -82,6 +84,27 @@ public class ToolDAO {
 
     public void changeComments(String id){
         String sql="update tool_table set comment_number=comment_number+1 where tool_id=\""+id+"\"";
+        connention.changeData(sql);
+    }
+
+    public void insertNewTool(String name,String version,int type,String user_id,String des,String tag,String url) throws SQLException {
+        Random random = new Random();
+        boolean flag=true;
+        String s="";
+        while(flag){
+            long l=random.nextLong();
+            if(l<0) continue;
+            s = String.valueOf(l);
+            if(getToolById(s)==null){
+                flag=false;
+            }
+        }
+        String sql="insert into tool_table values (\""+s+"\",\""+name+"\",\""+version+"\","+type+",default,\""+user_id+"\",\""+des+"\",\""+tag+"\",\""+url+"\",default,default,default)";
+        connention.changeData(sql);
+    }
+
+    public void addDownload(String id){
+        String sql="update tool_table set download_number=download_number+1 where tool_id=\""+id+"\"";
         connention.changeData(sql);
     }
 

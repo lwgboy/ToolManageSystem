@@ -6,6 +6,7 @@
 
 <!--suppress ALL -->
 <struts>
+    <constant name="struts.multipart.maxSize" value="1073741824"></constant>
     <!--suppress Struts2ModelInspection -->
     <package name="site.yananart.action" namespace="/" extends="struts-default">
         <action name="Login" class="site.yananart.action.LoginAction" method="execute">
@@ -52,6 +53,17 @@
         </action>
         <action name="makeAdmin" class="site.yananart.action.SetAdminAction" method="make">
             <result name="success">/a/index.jsp</result>
+        </action>
+        <action name="upload" class="site.yananart.action.UploadAction" method="upload">
+            <result name="success">/u/index.jsp</result>
+            <result name="error">/u/upload.jsp</result>
+        </action>
+        <action name="download" class="site.yananart.action.DownloadAction">
+            <result name="success" type="stream" >
+                <param name="inputName">is</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+            </result>
         </action>
     </package>
 </struts>

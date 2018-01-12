@@ -58,6 +58,7 @@ public class ChangeCommentDetailAction {
                 break;
             }
         }
+        session.remove("url");
         session.remove("mycomment");
         session.remove("tool");
         return "success";

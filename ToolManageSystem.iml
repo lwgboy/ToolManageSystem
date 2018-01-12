@@ -15,6 +15,7 @@
           <fileset id="s2fileset" name="Default File Set " removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
             <file>jar://$USER_HOME$/Downloads/struts/lib/struts2-core-2.3.34.jar!/struts-default.xml</file>
+            <file>file://$MODULE_DIR$/src/download_struts.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -31,5 +32,6 @@
     <orderEntry type="library" name="Struts 2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.45-bin" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="Tomcat 9.0.2" level="application_server_libraries" />
   </component>
 </module>

@@ -73,6 +73,15 @@ public class SearchAction {
             session.put("reslut", tools);
             session.put("searchStatus", "搜索成功");
             return "success";
+        }else if(searchType.equals("type")){
+            tools=toolDAO.getToolByType(Integer.parseInt(content));
+            if(tools==null){
+                session.put("searchStatus","未找到任何工具");
+                return "error";
+            }
+            session.put("reslut",tools);
+            session.put("searchStatus","搜索成功");
+            return "success";
         }
         session.put("searchStatus","搜索失败");
         return "error";
@@ -93,4 +102,5 @@ public class SearchAction {
     public void setContent(String content) {
         this.content = content;
     }
+
 }
