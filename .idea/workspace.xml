@@ -7,27 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b74c1e45-ddd1-4a11-87ad-047dea2e0157" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/site/yananart/action/DownloadAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/site/yananart/action/UploadAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/file.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ToolManageSystem.iml" afterPath="$PROJECT_DIR$/ToolManageSystem.iml" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/ChangeCommentDetailAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/ChangeCommentDetailAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/SearchAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/SearchAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/action/ShowToolDetailAction.java" afterPath="$PROJECT_DIR$/src/site/yananart/action/ShowToolDetailAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/dao/BasicConnent.java" afterPath="$PROJECT_DIR$/src/site/yananart/dao/BasicConnent.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/dao/ToolDAO.java" afterPath="$PROJECT_DIR$/src/site/yananart/dao/ToolDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/site/yananart/entity/Tool.java" afterPath="$PROJECT_DIR$/src/site/yananart/entity/Tool.java" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change beforePath="$PROJECT_DIR$/web/Login.jsp" afterPath="$PROJECT_DIR$/web/Login.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/a/changeInfo.jsp" afterPath="$PROJECT_DIR$/web/a/changeInfo.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/a/index.jsp" afterPath="$PROJECT_DIR$/web/a/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/a/setAdmin.jsp" afterPath="$PROJECT_DIR$/web/a/setAdmin.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/changeInfo.jsp" afterPath="$PROJECT_DIR$/web/u/changeInfo.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/index.jsp" afterPath="$PROJECT_DIR$/web/u/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/result.jsp" afterPath="$PROJECT_DIR$/web/u/result.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/toolDetail.jsp" afterPath="$PROJECT_DIR$/web/u/toolDetail.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/u/upload.jsp" afterPath="$PROJECT_DIR$/web/u/upload.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -594,7 +574,7 @@
       <workItem from="1515407430450" duration="2656000" />
       <workItem from="1515556907539" duration="5421000" />
       <workItem from="1515662181511" duration="28231000" />
-      <workItem from="1515738115953" duration="12000" />
+      <workItem from="1515738115953" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1515279203143</created>
@@ -610,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515359352423</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="基本完成，前端完成，需修改上传警告，多条评论，文件下载文件名（部分类型出错），管理员文件管理功能">
+      <created>1515738300853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1515738300853</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95435000" />
+    <option name="totallyTimeSpent" value="95599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -697,7 +684,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="还有上传、下载、管理未完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="还有上传、下载、管理未完成" />
+    <MESSAGE value="基本完成，前端完成，需修改上传警告，多条评论，文件下载文件名（部分类型出错），管理员文件管理功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完成，前端完成，需修改上传警告，多条评论，文件下载文件名（部分类型出错），管理员文件管理功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,6 +698,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="58" column="91" lean-forward="false" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#249#250#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+            <element signature="method#turnToComment#0;class#CommentDAO#0" expanded="false" />
+            <element signature="e#3263#3264#0" expanded="false" />
+            <element signature="e#3307#3308#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -739,6 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -746,6 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -817,6 +815,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -824,6 +825,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -839,6 +841,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="55" column="98" lean-forward="false" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#249#250#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+            <element signature="method#turnToComment#0;class#CommentDAO#0" expanded="false" />
+            <element signature="e#3263#3264#0" expanded="false" />
+            <element signature="e#3307#3308#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -853,6 +863,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="72" column="9" lean-forward="false" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -913,6 +924,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="46" column="68" lean-forward="false" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +948,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -959,6 +972,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
           <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -966,6 +980,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

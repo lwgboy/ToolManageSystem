@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+.topbody{ 
+    width:900px;
+    margin: 0 auto;
+}
+.topbar{
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    width:100%;
+    background-color: #000;
+    display: inline-block;
+}
+
+.topbar li{
+    float:left;
+}
+.toplist{
+    display: inline-block;
+    list-style-type:none;
+    float: right;
+}
+.toplist a{
+    color:#FFF;
+    text-decoration: none;
+}
+.title,.toplist a{
+    display: block;
+    float: left;
+}
+.toplist a{
+    padding:15px 20px 15px 20px;
+}
+.title{
+    color:#FFF;
+    text-decoration: none;
+    padding:15px 30px 15px 30px;
+}
