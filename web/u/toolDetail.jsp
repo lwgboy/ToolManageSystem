@@ -94,18 +94,13 @@
                                 </c:forEach>
                             </c:if>
                             <c:if test="${comments.size()==0}">
-                                暂无他人评论<br>
+                                暂无评论<br>
                             </c:if>
                             <br>
                             <br>
-                            我的评论：&nbsp;&nbsp;&nbsp;&nbsp;评论时间：${mycomment.getCommendTime()}<br>
+                            评论：<br>
                             <form action="insertComment.action" method="post">
-                                <c:if test="${mycomment.isComment()}">
-                                    <textarea name="commentContent" style="width: 500px;background-color:transparent;margin: 5px 0px 0px 0px;color: white">${mycomment.getCommentContent()}</textarea><br>
-                                </c:if>
-                                <c:if test="${!mycomment.isComment()}">
-                                    <textarea name="commentContent" style="width: 500px;background-color:transparent;margin: 5px 0px 0px 0px;color: white">尚未评论</textarea><br>
-                                </c:if>
+                                <textarea name="commentContent" style="width: 500px;background-color:transparent;margin: 5px 0px 0px 0px;color: white"></textarea><br>
                                 <input type="submit" value="提交" />
                             </form>
                         </div>

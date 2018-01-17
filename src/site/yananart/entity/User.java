@@ -67,4 +67,13 @@ public class User {
         else if(this.userType==0) return "非管理员";
         else return "\""+this.manageUrl+"\"目录管理员";
     }
+
+    public int getManageType(){
+        if (userType==2) return -1;
+        String[] des={"系统工具","通讯社交","影音播放","新闻阅读","摄影图像","网上购物","金融理财","办公商务"};
+        for (int i = 0; i <des.length ; i++) {
+            if(manageUrl.contains(des[i])) return i;
+        }
+        return -1;
+    }
 }

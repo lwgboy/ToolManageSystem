@@ -38,7 +38,6 @@ public class ShowToolDetailAction {
         ArrayList<Comment> commentArrayList=new ArrayList<>();
         if(comments!=null){
             comments.forEach(x->{
-                if(x.getUserId().equals(user.getUserId())) return;
                 if(x.isComment()) commentArrayList.add(x);
             });
         }

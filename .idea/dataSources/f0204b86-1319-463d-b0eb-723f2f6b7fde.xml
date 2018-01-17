@@ -976,6 +976,7 @@ user_id</ColNames>
       <RefSchemaName>tool_manage_system</RefSchemaName>
       <RefTableName>tool_table</RefTableName>
       <RefColNames>tool_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="244" parent="232" name="comment_table_ibfk_2">
       <ColNames>user_id</ColNames>

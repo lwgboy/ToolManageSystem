@@ -1,18 +1,16 @@
 package site.yananart.action;
 
+import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.ServletActionContext;
+import site.yananart.controller.GetDAO;
+import site.yananart.dao.ToolDAO;
+import site.yananart.entity.Tool;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.net.URLEncoder;
 import java.util.Map;
-
-import com.opensymphony.xwork2.ActionContext;
-import org.apache.struts2.ServletActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import site.yananart.controller.GetDAO;
-import site.yananart.dao.ToolDAO;
-import site.yananart.entity.Tool;
 
 public class DownloadAction {
     private String fileName;

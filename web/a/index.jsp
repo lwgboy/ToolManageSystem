@@ -51,7 +51,6 @@
             <div class="logo_box">
                 <c:if test="${user.getUserType()==2}"><h3>设置子类管理员</h3>
                     <form id="setAdmin" action="setAdmin.action" method="post">
-
                         <div class="input_outer">
                             <span class="u_user"></span>
                             <input name="id" class="text" style="color: #FFFFFF !important;"value="" type="text" placeholder="请搜索用户ID">
@@ -62,6 +61,32 @@
                     <br>
                     <p align="center">${result}</p>
                 </c:if>
+                <div align="center" style="margin: 50px 0px 0px 0px">
+                    <table>
+                        <tr>
+                            <th style="color: white">ID</th>
+                            <th width="50px" style="color: white">名称</th>
+                            <th width="50px" style="color: white">版本号</th>
+                            <th width="50px" style="color: white">操作</th>
+                        </tr>
+                        <c:if test="${tools.size()==null}">
+                            <tr>
+                                <td align="center" style="color: white">Null</td>
+                                <td align="center" style="color: white">Null</td>
+                                <td align="center" style="color: white">Null</td>
+                                <td align="center" style="color: white">Null</td>
+                            </tr>
+                        </c:if>
+                        <c:forEach items="${tools}" var="tool">
+                            <tr>
+                                <td align="center" style="color: white">${tool.getToolId()}</td>
+                                <td align="center" style="color: white">${tool.getToolName()}</td>
+                                <td align="center" style="color: white">${tool.getToolVersion()}</td>
+                                <td align="center" style="color: white"><a href="delete.action?id=${tool.getToolId()}">删除</a></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -108,6 +108,17 @@ public class ToolDAO {
         connention.changeData(sql);
     }
 
+    public void delete(String id){
+        String sql="delete from tool_table where tool_id=\""+id+"\"";
+        connention.changeData(sql);
+    }
+
+    public ArrayList<Tool> getToolListByType(int type) throws SQLException {
+        String sql="select * from tool_table where tool_type="+type;
+        if(type==-1) sql="select * from tool_table";
+        return turnToTool(connention.getData(sql));
+    }
+
     public void closeConnect(){
         connention.closeConnention();
     }

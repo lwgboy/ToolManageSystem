@@ -2,9 +2,12 @@ package site.yananart.action;
 
 import com.opensymphony.xwork2.ActionContext;
 import site.yananart.controller.GetDAO;
+import site.yananart.dao.ToolDAO;
 import site.yananart.dao.UserDAO;
+import site.yananart.entity.Tool;
 import site.yananart.entity.User;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class LoginAction{
@@ -26,6 +29,9 @@ public class LoginAction{
                     }
                     session.remove("LoginStatus");
                     session.put("user",user);
+                    ToolDAO toolDAO=GetDAO.getToolDAO();
+                    ArrayList<Tool> tools=toolDAO.getToolListByType(user.getManageType());
+                    session.put("tools",tools);
                     return "admin";
                 }
                 session.remove("LoginStatus");

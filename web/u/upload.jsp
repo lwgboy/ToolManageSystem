@@ -9,6 +9,33 @@
 <html>
 <head>
     <title>上传工具</title>
+    <!--校验-->
+    <script language="JavaScript" type="text/javascript">
+        function check(){
+            var name=document.getElementById("name");
+            var version1=document.getElementById("version1");
+            var version2=document.getElementById("version1");
+            var version3=document.getElementById("version1");
+            var tag=document.getElementById("tag");
+            var describe=document.getElementById("describe");
+
+            if(name.value==""){
+                alert("文件名不能为空！");
+                return false;
+            }else if(version1.value==""||version2.value==""||version3.value=="" ){
+                alert("请添完整的版本号！")
+                return false;
+            }else if(tag.value==""){
+                alert("标签号不能为空！");
+                return false;
+            }else if(describe.value==""){
+                alert("描述不能为空！");
+                return false;
+            }
+        }
+    </script>
+
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,12 +90,12 @@
                                 </p>
                                 <br>
                                 上传工具说明<br>
-                                工具名称：<input type="text" name="name" style="background: transparent;margin: 10px 0px 0px 0px;color: white" value="${upname}"/><br>
+                                工具名称：<input type="text" name="name" id="name" style="background: transparent;margin: 10px 0px 0px 0px;color: white" value="${upname}"/><br>
                                 <p style="margin: 10px 0px 0px 0px">
                                     工具版本：<i>V</i>
-                                    <input type="text" name="version1" style="width: 20px;background: transparent;color: white" value="${ver1}" />.
-                                    <input type="text" name="version2" style="width: 20px;background: transparent;color: white" value="${ver2}" />.
-                                    <input type="text" name="version3" style="width: 20px;background: transparent;color: white" value="${ver3}" />
+                                    <input type="text" name="version1" id="version1" style="width: 20px;background: transparent;color: white" value="${ver1}" />.
+                                    <input type="text" name="version2" id="version2" style="width: 20px;background: transparent;color: white" value="${ver2}" />.
+                                    <input type="text" name="version3" id="version3" style="width: 20px;background: transparent;color: white" value="${ver3}" />
                                     &nbsp;&nbsp;<i>(版本号示例：<b>V1.0.0</b>)</i><br>
                                 </p>
                                 <p style="margin: 20px 0px 0px 0px">
@@ -76,7 +103,7 @@
                                 </p>
                                 <table style="margin: 0px 0px 0px 0px">
                                     <tr style="color:white">
-                                        <td><input type="radio" checked="checked" name="type" value="0"/>系统工具</td>&nbsp;
+                                        <td><input type="radio" checked="checked" name="type" id="type" value="0"/>系统工具</td>&nbsp;
                                         <td><input type="radio" name="type" value="1"/>通讯社交</td>&nbsp;
                                         <td><input type="radio" name="type" value="2"/>影音播放</td>&nbsp;
                                         <td><input type="radio" name="type" value="3"/>新闻阅读</td>&nbsp;
@@ -87,10 +114,10 @@
                                     </tr>
                                 </table>
                                 <p style="margin: 10px 0px 0px 0px">工具自定义标签(用空格分离)：</p>
-                                <input type="text" name="tag" style="background: transparent;margin: 5px 0px 0px 0px;width: 500px;color: white" value="${uptag}" /><br>
+                                <input type="text" name="tag" id="tag" style="background: transparent;margin: 5px 0px 0px 0px;width: 500px;color: white" value="${uptag}" /><br>
                                 <p style="margin: 10px 0px 0px 0px">工具描述：</p>
-                                <textarea name="describe" style="width: 500px;height: 150px;background: transparent;margin: 5px 0px 0px 0px;color: white">${tudes}</textarea><br>
-                                <input type="submit" value="上传" class="act-but submit" style="color: white;width: 200px"/>
+                                <textarea name="describe" id="describe" style="width: 500px;height: 150px;background: transparent;margin: 5px 0px 0px 0px;color: white">${tudes}</textarea><br>
+                                <input type="submit" value="上传" onclick="check();" class="act-but submit" style="color: white;width: 200px"/>
                             </form>
                         </div>
                     </div>
