@@ -183,7 +183,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="112" />
     <option name="y" value="-21" />
     <option name="width" value="1102" />
@@ -524,7 +524,7 @@
       <workItem from="1515556907539" duration="5421000" />
       <workItem from="1515662181511" duration="28231000" />
       <workItem from="1515738115953" duration="176000" />
-      <workItem from="1516161483249" duration="8954000" />
+      <workItem from="1516161483249" duration="9000000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1515279203143</created>
@@ -551,7 +551,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104553000" />
+    <option name="totallyTimeSpent" value="104599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +563,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -605,7 +605,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="还有上传、下载、管理未完成" />
     <MESSAGE value="基本完成，前端完成，需修改上传警告，多条评论，文件下载文件名（部分类型出错），管理员文件管理功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本完成，前端完成，需修改上传警告，多条评论，文件下载文件名（部分类型出错），管理员文件管理功能" />
+    <MESSAGE value="repaire some mistake" />
+    <option name="LAST_COMMIT_MESSAGE" value="repaire some mistake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
