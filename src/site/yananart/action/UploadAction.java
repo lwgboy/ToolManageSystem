@@ -67,8 +67,8 @@ public class UploadAction {
         //System.out.println(fileFileName);
         //String[] names=fileFileName.split(".");
         String[] des={"系统工具","通讯社交","影音播放","新闻阅读","摄影图像","网上购物","金融理财","办公商务"};
-        realpath+='/'+des[type];
-        fileFileName=name+' '+version+fileFileName.substring(fileFileName.lastIndexOf('.'));
+        realpath+='/'+des[type]+'/'+name;
+        fileFileName=version+fileFileName.substring(fileFileName.lastIndexOf('.'));
         File savefile = new File(new File(realpath), fileFileName);
         FileUtils.copyFile(file,savefile);
         session.remove("upname");
@@ -77,10 +77,10 @@ public class UploadAction {
         session.remove("ver3");
         session.remove("uptag");
         session.remove("tudes");
-        session.put("searchStatus","已将文件"+fileFileName+"上传保存至\"\\"+des[type]+"\\\"目录");
+        session.put("searchStatus","已将文件上传保存至\"\\"+des[type]+"\\"+name+"\\"+fileFileName+"\"");
         ToolDAO toolDAO= GetDAO.getToolDAO();
         User user= (User) session.get("user");
-        toolDAO.insertNewTool(name,version,type,user.getUserId(),describe,tag,"/"+des[type]+"/"+fileFileName);
+        toolDAO.insertNewTool(name,version,type,user.getUserId(),describe,tag,"/"+des[type]+"/"+name+"/"+fileFileName);
         return "success";
     }
 

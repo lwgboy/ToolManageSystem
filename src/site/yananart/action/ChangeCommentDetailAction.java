@@ -3,6 +3,7 @@ package site.yananart.action;
 import com.opensymphony.xwork2.ActionContext;
 import site.yananart.controller.GetDAO;
 import site.yananart.dao.CommentDAO;
+import site.yananart.dao.ToolDAO;
 import site.yananart.entity.Comment;
 import site.yananart.entity.Tool;
 
@@ -22,6 +23,22 @@ public class ChangeCommentDetailAction {
         return;
     }
 
+    private void getComment() throws Exception {
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        CommentDAO commentDAO=GetDAO.getCommentDAO();
+        ToolDAO toolDAO=GetDAO.getToolDAO();
+        Tool tool = (Tool) session.get("tool");
+        ArrayList<Comment> comments=commentDAO.getCommentByToolId(tool.getToolId());
+        ArrayList<Comment> commentArrayList=new ArrayList<>();
+        if(comments!=null){
+            comments.forEach(x->{
+                if(x.isComment()) commentArrayList.add(x);
+            });
+        }
+        session.put("comments",commentArrayList);
+    }
+
     public String insertComment() throws Exception {
         ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
@@ -33,6 +50,7 @@ public class ChangeCommentDetailAction {
         commentDAO.insertComment(comment.getToolId(),comment.getUserId(),commentContent);
         session.put("mycomment",comment);
         renovate(comment.getToolId());
+        getComment();
         return "success";
     }
 
@@ -59,7 +77,6 @@ public class ChangeCommentDetailAction {
             }
         }
         session.remove("url");
-        session.remove("mycomment");
         session.remove("tool");
         return "success";
     }

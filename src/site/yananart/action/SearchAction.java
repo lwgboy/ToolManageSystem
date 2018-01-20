@@ -55,13 +55,15 @@ public class SearchAction {
             ArrayList<User> users;
             tools=new ArrayList<>();
             UserDAO userDAO= GetDAO.getUserDAO();
-            users=userDAO.getUserByName(content);
             ArrayList<Tool> mid;
-            if(users!=null){
-                for (int i = 0; i < users.size() ; i++) {
-                    mid=toolDAO.getToolByUploadUserId(users.get(i).getUserId());
-                    if(mid==null) continue;
-                    mid.forEach(tools::add);
+            if(!content.equals("admin")){
+                users=userDAO.getUserByName(content);
+                if(users!=null){
+                    for (int i = 0; i < users.size() ; i++) {
+                        mid=toolDAO.getToolByUploadUserId(users.get(i).getUserId());
+                        if(mid==null) continue;
+                        mid.forEach(tools::add);
+                    }
                 }
             }
             mid = toolDAO.getToolByUploadUserId(content);

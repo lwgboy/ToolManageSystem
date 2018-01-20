@@ -67,7 +67,8 @@
                                     </p>
                                     <p style="font-size: 14px;margin: 5px 0px 0px 0px">
                                         点赞：${tool.getStarNumber()}&nbsp;
-                                        评论：${tool.getCommentNumber()}
+                                        评论：${tool.getCommentNumber()}&nbsp;
+                                        下载量：${tool.getDownloadNumber()}
                                     </p>
                                     <br>
                                 </div>
@@ -75,7 +76,6 @@
                                 <br>
                             </div>
                         </c:forEach>
-
                     </div>
                 </div>
             </div>

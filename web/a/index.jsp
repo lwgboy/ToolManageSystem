@@ -62,12 +62,13 @@
                     <p align="center">${result}</p>
                 </c:if>
                 <div align="center" style="margin: 50px 0px 0px 0px">
+                    <h3>文件管理</h3>
                     <table>
                         <tr>
                             <th style="color: white">ID</th>
-                            <th width="50px" style="color: white">名称</th>
-                            <th width="50px" style="color: white">版本号</th>
-                            <th width="50px" style="color: white">操作</th>
+                            <th width="100px" style="color: white">名称</th>
+                            <th width="100px" style="color: white">版本号</th>
+                            <th width="100px" style="color: white">操作</th>
                         </tr>
                         <c:if test="${tools.size()==null}">
                             <tr>

@@ -27,7 +27,11 @@ public class DownloadAction {
         System.out.println(path+"\\"+url);
         try {
             is= new BufferedInputStream(new FileInputStream(path+"\\"+url));
-            fileName=url.substring(url.lastIndexOf('/')+1);
+            int fi,se,tr;
+            fi=url.indexOf('/',2);
+            se=url.indexOf('/',fi+1);
+            tr=url.lastIndexOf('.');
+            fileName=url.substring(fi+1,se)+' '+url.substring(se+1,tr)+url.substring(tr);
             System.out.println(fileName);
             ToolDAO toolDAO= GetDAO.getToolDAO();
             toolDAO.addDownload(tool.getToolId());
@@ -37,6 +41,8 @@ public class DownloadAction {
             System.out.println(e.getMessage());
             return null;
         }
+        tool.setDownloadNumber(tool.getDownloadNumber()+1);
+        session.put("tool",tool);
         return "success";
     }
     // 创建InputStream的输入流
