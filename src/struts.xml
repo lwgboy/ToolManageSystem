@@ -68,5 +68,8 @@
         <action name="delete" class="site.yananart.action.DeleteAction">
             <result name="success">/a/index.jsp</result>
         </action>
+        <action name="history" class="site.yananart.action.ChangeCommentDetailAction" method="showHistory">
+            <result name="success">/u/history.jsp</result>
+        </action>
     </package>
 </struts>

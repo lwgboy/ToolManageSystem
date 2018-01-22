@@ -89,7 +89,7 @@
                             <c:if test="${comments.size()>0}">
                                 <c:forEach items="${comments}" var="comment">
                                     <p style="font-size: 20px">“${comment.getCommentContent()}”<br></p>
-                                    <p style="font-size: 14px;margin: 5px 20px 0px 40px">——by&nbsp;${userDAO.getUserById(comment.getUserId()).getUserName()}&nbsp;at&nbsp;${comment.getCommendTime()}</p>
+                                    <p style="font-size: 14px;margin: 5px 20px 0px 40px">——by&nbsp;${userDAO.getUserById(comment.getUserId()).getUserName()}&nbsp;at&nbsp;${comment.getCommendTime()}&nbsp;<a href="history.action" style="color: red">显示历史评论</a></p>
                                     <br>
                                 </c:forEach>
                             </c:if>

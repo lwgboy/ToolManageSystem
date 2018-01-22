@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionContext;
 import site.yananart.dao.CommentDAO;
 import site.yananart.dao.ToolDAO;
 import site.yananart.dao.UserDAO;
+import site.yananart.dao.WhatDAO;
 
 import java.util.Map;
 
@@ -39,5 +40,16 @@ public class GetDAO {
             session.put("commentDAO",commentDAO);
         }
         return commentDAO;
+    }
+
+    public static WhatDAO getWhatDAO(){
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        WhatDAO whatDAO= (WhatDAO) session.get("whatDAO");
+        if(whatDAO==null){
+            whatDAO=new WhatDAO();
+            session.put("whatDAO",whatDAO);
+        }
+        return whatDAO;
     }
 }

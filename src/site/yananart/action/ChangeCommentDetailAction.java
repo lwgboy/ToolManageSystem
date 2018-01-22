@@ -4,8 +4,10 @@ import com.opensymphony.xwork2.ActionContext;
 import site.yananart.controller.GetDAO;
 import site.yananart.dao.CommentDAO;
 import site.yananart.dao.ToolDAO;
+import site.yananart.dao.WhatDAO;
 import site.yananart.entity.Comment;
 import site.yananart.entity.Tool;
+import site.yananart.entity.What;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -44,7 +46,10 @@ public class ChangeCommentDetailAction {
         Map session = actionContext.getSession();
         CommentDAO commentDAO= GetDAO.getCommentDAO();
         Comment comment= (Comment)session.get("mycomment");
-        comment.setComment(true);
+        WhatDAO whatDAO=GetDAO.getWhatDAO();
+        System.out.println("已评论"+comment.isComment());
+        if(comment.isComment()) whatDAO.insertContent(comment.getUserId(),comment.getToolId(),comment.getCommendTime(),comment.getCommentContent());
+        else comment.setComment(true);
         comment.setCommentContent(commentContent);
         comment.setCommendTime(new Timestamp(System.currentTimeMillis()));
         commentDAO.insertComment(comment.getToolId(),comment.getUserId(),commentContent);
@@ -78,6 +83,17 @@ public class ChangeCommentDetailAction {
         }
         session.remove("url");
         session.remove("tool");
+        session.remove("history");
+        return "success";
+    }
+
+    public String showHistory() throws SQLException {
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        Comment comment= (Comment)session.get("mycomment");
+        WhatDAO whatDAO=GetDAO.getWhatDAO();
+        ArrayList<What> whats=whatDAO.getComment(comment.getToolId(),comment.getUserId());
+        session.put("history",whats);
         return "success";
     }
 
